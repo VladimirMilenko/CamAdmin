@@ -130,7 +130,7 @@ class LogsStore {
         statusIsValue: true,
         renderable:true,
         render:(value)=>{
-            return moment.duration(value,'seconds').humanize()
+            return moment.duration(value,'seconds').locale('ru').humanize()
         },
         statusDescription: {
             'null': {
