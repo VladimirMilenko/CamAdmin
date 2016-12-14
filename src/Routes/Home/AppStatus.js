@@ -10,6 +10,31 @@ import {Badge, Row, Col, Card} from 'antd';
 export class AppStatus extends React.Component {
     renderProp(property){
         console.log(property.text + " " + property.status);
+        if(property.renderable && property.statusIsValue){
+            if(property.status == null){
+                return (
+                    <Row key={'prop'+property.text} className="border_bottom padding_15">
+                        <div style={{float: 'left'}}>
+                            <span>{property.text}</span>
+                        </div>
+                        <div style={{float: 'right',minWidth:'110px'}}>
+                            <Badge status={property.statusDescription[['null']].status} text={property.statusDescription[['null']].message}/>
+                        </div>
+                    </Row>
+                )
+            } else{
+                return (
+                    <Row key={'prop'+property.text}  className="border_bottom padding_15">
+                        <div style={{float: 'left'}}>
+                            <span>{property.text}</span>
+                        </div>
+                        <div style={{float: 'right',minWidth:'110px'}}>
+                            <Badge status={property.statusDescription[['default']].status} text={property.render(property.status)}/>
+                        </div>
+                    </Row>
+                )
+            }
+        }
         if(property.statusIsValue){
             if(property.status == null){
                 return (

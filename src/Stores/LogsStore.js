@@ -3,6 +3,7 @@
  */
 import {observable, reaction} from 'mobx';
 import * as axios from "axios";
+import * as moment from "moment";
 
 class LogsStore {
 
@@ -126,6 +127,10 @@ class LogsStore {
         text: 'Аптайм',
         status: null,
         statusIsValue: true,
+        renderable:true,
+        render:(value)=>{
+            return moment.duration(value,'seconds').humanize()
+        },
         statusDescription: {
             'null': {
                 status: 'warning',
