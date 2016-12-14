@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+<head>
+    <title>Base config form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Project's styles -->
+    <link href="css/project.css" rel="stylesheet">
+</head>
+
+<body class="page__body">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Configurator</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-7">
+                <form class="form form-horizontal">
+                    <div class="form-group">
+                        <label for="loc" class="col-sm-2 control-label">Location:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="loc" placeholder="введите краткое название места">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lat" class="col-sm-2 control-label">Latitude:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lat" placeholder="введите широту">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="long" class="col-sm-2 control-label">Longitude:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="long" placeholder="введите долготу">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res" class="col-sm-2 control-label">Resolution:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="res" placeholder="введите разрешение камеры">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="int" class="col-sm-2 control-label">Interval:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="int" placeholder="введите интервал">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group_type_actions">
+                        <div class="col-sm-5">
+                            <button class="btn btn-primary btn-block" type="submit">Сохранить</button>
+                        </div>
+                        <div class="col-sm-7">
+                            <a class="btn btn-default btn-block" role="button" href="index.html">На главную</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-default btn-block btn-lg" type="submit">Перейти к разметке</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-5">
+                <div class="well">
+                    Place for your code
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

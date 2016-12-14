@@ -1,0 +1,62 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';
+
+.content .row
+{
+    padding-bottom: 2rem;
+}
+
+.info,
+.logs
+{
+    margin: 0;
+}
+
+.badge-success
+{
+    color: #fff;
+    background: #5cb85c;
+}
+
+.badge-info
+{
+    color: #fff;
+    background: #5bc0de;
+}
+
+.badge-danger
+{
+    color: #fff;
+    background: #d9534f;
+}
+
+.badge-warning
+{
+    color: #fff;
+    background: #f0ad4e;
+}
+
+.form-group_type_actions
+{
+    margin-top: 4rem;
+}
+
+.camera
+{
+    position: relative;
+
+    margin: 0 auto 2rem;
+    width: 640px;
+    height: 480px;
+
+    background: #ccc;
+}
+
+.camera__control
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
