@@ -4,7 +4,8 @@
 import {observable, reaction} from 'mobx';
 import * as axios from "axios";
 import * as moment from "moment";
-
+import ru from 'moment/locale/ru'
+moment.locale('ru',ru);
 class LogsStore {
 
     @observable cameraState = {
