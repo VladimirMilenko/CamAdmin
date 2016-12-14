@@ -172,8 +172,8 @@ export class Home extends React.Component {
                 </Row>
                 <Row className="margin_top_40">
                     <Col lg={15} md={15} xs={24} span={15}>
-                        <img src={`${this.props.appState.connectionUrl}/configurator/videoFeed`} className="camera" style={{width: 640,border:'1px solid #e9e9e9', height: 480, margin: '0 auto',position:'relative'}}>
-                        </img>
+                        <div src={`${this.props.appState.connectionUrl}/configurator/videoFeed`} className="camera" style={{width: 640,border:'1px solid #e9e9e9', height: 480, margin: '0 auto',position:'relative'}}>
+                        </div>
                     </Col>
                     <Col lg={{span: 8, offset: 1}} xs={{span: 24, offset: 0}} md={{span: 8, offset: 1}}>
                         <Card title="Статус" className="min_width_150" bordered={true} style={{width: '100%'}}
