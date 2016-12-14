@@ -17,7 +17,7 @@ export class AppStatus extends React.Component {
                         <div style={{float: 'left'}}>
                             <span>{property.text}</span>
                         </div>
-                        <div style={{float: 'right',minWidth:'110px'}}>
+                        <div style={{float: 'right',minWidth:'130px'}}>
                             <Badge status={property.statusDescription[['null']].status} text={property.statusDescription[['null']].message}/>
                         </div>
                     </Row>
@@ -28,7 +28,7 @@ export class AppStatus extends React.Component {
                         <div style={{float: 'left'}}>
                             <span>{property.text}</span>
                         </div>
-                        <div style={{float: 'right',minWidth:'110px'}}>
+                        <div style={{float: 'right',minWidth:'130px'}}>
                             <Badge status={property.statusDescription[['default']].status} text={property.render(property.status)}/>
                         </div>
                     </Row>
@@ -42,7 +42,7 @@ export class AppStatus extends React.Component {
                         <div style={{float: 'left'}}>
                             <span>{property.text}</span>
                         </div>
-                        <div style={{float: 'right',minWidth:'110px'}}>
+                        <div style={{float: 'right',minWidth:'130px'}}>
                             <Badge status={property.statusDescription[['null']].status} text={property.statusDescription[['null']].message}/>
                         </div>
                     </Row>
@@ -53,7 +53,7 @@ export class AppStatus extends React.Component {
                         <div style={{float: 'left'}}>
                             <span>{property.text}</span>
                         </div>
-                        <div style={{float: 'right',minWidth:'110px'}}>
+                        <div style={{float: 'right',minWidth:'130px'}}>
                             <Badge status={property.statusDescription[['default']].status} text={property.status}/>
                         </div>
                     </Row>
@@ -66,7 +66,7 @@ export class AppStatus extends React.Component {
                 <div style={{float: 'left'}}>
                     <span>{property.text}</span>
                 </div>
-                <div style={{float: 'right',minWidth:'110px'}}>
+                <div style={{float: 'right',minWidth:'130px'}}>
                     <Badge status={status} text={property.statusDescription[[property.status + '']].message}/>
                 </div>
             </Row>

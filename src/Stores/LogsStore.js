@@ -16,7 +16,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'false': {
                 status: 'error',
@@ -34,7 +34,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'false': {
                 status: 'error',
@@ -52,7 +52,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'false': {
                 status: 'error',
@@ -70,7 +70,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'false': {
                 status: 'error',
@@ -88,7 +88,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'false': {
                 status: 'error',
@@ -106,7 +106,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'stopped': {
                 status: 'default',
@@ -118,7 +118,7 @@ class LogsStore {
             },
             'working': {
                 status: 'success',
-                message: 'Работатет'
+                message: 'Работает'
             },
             'starting': {
                 status: 'processing',
@@ -137,7 +137,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',
@@ -152,7 +152,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',
@@ -167,7 +167,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',
@@ -182,7 +182,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',
@@ -197,7 +197,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',
@@ -212,7 +212,7 @@ class LogsStore {
         statusDescription: {
             'null': {
                 status: 'warning',
-                message: 'Поле недоступно',
+                message: 'Недоступно',
             },
             'default': {
                 status: 'success',

@@ -11,7 +11,7 @@ import {Row, Col, Radio, notification, Button, Form, Input, Select, InputNumber,
 import SupportLineForm from './SupportLineForm'
 import LineForm from './LineForm';
 import * as mobx from "mobx";
-import axios from 'axios';
+import {Canvas,Circle, Image, Path, Text} from 'react-fabricjs';
 
 
 const RadioButton = Radio.Button;
@@ -203,9 +203,10 @@ export class Markup extends React.Component {
                                  ref={(elem) => this.elem = elem}>
                                 {this.state.lines.map((line) => {
                                     return (
-                                        <g key={line.uuid}>
-                                            <Tooltip placement="top"
-                                                     title={`(x1:${Math.ceil(line.points[0].x)},y1:${Math.ceil(line.points[0].y)} ; x2:${Math.ceil(line.points[1].x)},y2:${Math.ceil(line.points[1].y)})`}>
+                                        <Tooltip key={line.uuid} placement="top"
+                                                 title={`(x1:${Math.ceil(line.points[0].x)},y1:${Math.ceil(line.points[0].y)} ; x2:${Math.ceil(line.points[1].x)},y2:${Math.ceil(line.points[1].y)})`}>
+                                        <g >
+
                                                 <polyline onClick={(e) => {
                                                     e.stopPropagation();
                                                     this.setState({
@@ -214,16 +215,28 @@ export class Markup extends React.Component {
                                                     });
                                                     this.props.form.setFieldsValue({selectedLine: line.uuid});
                                                 }} points={this.buildPointsArray(line.points)}
-                                                          fill='rgb(249,249,249)'
-                                                          strokeWidth='5'
-                                                          stroke={this.state.selectedUUID == line.uuid ? '#FF0000' : '#FF00C5'}/>
-                                            </Tooltip>
+                                                          strokeWidth='7'
+                                                          stroke={this.state.selectedUUID == line.uuid ? '#803280' : '#FF32FF'}/>
+                                                <polyline onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    this.setState({
+                                                        selectedUUID: line.uuid,
+                                                        points: []
+                                                    });
+                                                    this.props.form.setFieldsValue({selectedLine: line.uuid});
+                                                }} points={this.buildPointsArray(line.points)}
+                                                          strokeWidth='3'
+                                                          stroke='#FF32FF'/>
                                         </g>
+                                        </Tooltip>
+
                                     )
                                 })}
                                 {support_lanes.map((line, index) => {
                                         return (
                                             <g key={index}>
+                                                <Tooltip placement="top"
+                                                         title={`(x1:${Math.ceil(line.pixels[0].x)},y1:${Math.ceil(line.pixels[0].y)} ; x2:${Math.ceil(line.pixels[1].x)},y2:${Math.ceil(line.pixels[1].y)})`}>
                                                     <polyline id={`support${index}`} onClick={(e) => {
                                                         e.stopPropagation();
                                                         this.setState({
@@ -236,14 +249,7 @@ export class Markup extends React.Component {
                                                               fill='rgb(249,249,249)'
                                                               strokeWidth='5'
                                                               stroke={this.state.selectedUUID == line.uuid ? '#18FFFF' : '#76FF03'}/>
-                                                    <text id={`supportPopup${index}`} x={line.pixels[line.pixels.length-1].x} y={line.pixels[line.pixels.length-1].y} fontSize="15" fill="black" visibility="hidden">
-                                                        Name : {line.line_name}
-                                                        <br />
-                                                        Start: ({line.pixels[0].x};{line.pixels[0].y})
-                                                        <br />
-                                                        End:({line.pixels[1].x};{line.pixels[1].y})
-                                                        <set attributeName="visibility" from="hidden" to="visible" begin={`support${index}.mouseover`} end={`support${index}.mouseout`}/>
-                                                    </text>
+                                                </Tooltip>
                                             </g>
                                         )
                                     }
@@ -282,15 +288,16 @@ export class Markup extends React.Component {
                     xs={{span: 24}}>
                     <Tabs
                         defaultActiveKey="1">
-                        <TabPane
-                            tab="Разметка"
-                            key="1">
-                            <LineForm saveLane={(values) => this.saveLane(values)}/>
-                        </TabPane>
-                        <TabPane tab="Подсчет" key="2">
+                        <TabPane tab="Подсчет" key="1">
                             <SupportLineForm selectedUUID={this.state.selectedUUID}
                                              saveSupportLine={(values) => this.saveSupportLine(values)}/>
                         </TabPane>
+                        <TabPane
+                            tab="Разметка"
+                            key="2">
+                            <LineForm saveLane={(values) => this.saveLane(values)}/>
+                        </TabPane>
+
                     </Tabs>
                 </Col>
                 <Col className="margin_top_10" span={24}>

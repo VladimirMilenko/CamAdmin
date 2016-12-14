@@ -1,7 +1,7 @@
 /**
  * Created by AsTex on 10.12.2016.
  */
-import {Form, Input, InputNumber,Button} from 'antd';
+import {Form, Input, InputNumber,Button,notification} from 'antd';
 import * as React from "react";
 
 const FormItem = Form.Item;
@@ -22,22 +22,16 @@ export default class SupportLineForm extends React.Component {
             <Form horizontal onSubmit={(e) => {
                 e.preventDefault();
                 this.props.form.validateFields((err, values) => {
+                    if(this.props.selectedUUID == ''){
+                        notification['error']({
+                            message:'Выберите линию'
+                        });
+                    }
                     if (!err) {
-                        this.props.saveSupportLine(values);
+                        this.props.saveSupportLine({...values,selectedLine:this.props.selectedUUID});
                     }
                 });
             }}>
-                <FormItem label="Выбранная линия">
-                    {getFieldDecorator('selectedLine', {
-                        rules: [{
-                            required: true,
-                        }],
-                        initialValue: this.props.selectedUUID
-                    })(<Input placeholder="Локальный ID линии"
-                              disabled
-                              size="large"/>
-                    )}
-                </FormItem>
                 <FormItem label="Название">
                     {getFieldDecorator('supportLineName', {
                         rules: [{
