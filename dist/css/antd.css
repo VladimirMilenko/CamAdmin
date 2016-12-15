@@ -14498,6 +14498,7 @@ tr.ant-table-expanded-row:hover {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .ant-tabs:not(.ant-tabs-vertical) .ant-tabs-tabpane {
+  padding: 0 5px;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
