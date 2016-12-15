@@ -14,7 +14,7 @@ export class ConfigStore {
         },
         markup_config: {
             lanes: [],
-            support_lanes: []
+            support_lines: []
         }
     };
     @observable currentConnectionString;

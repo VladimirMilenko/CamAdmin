@@ -26,6 +26,8 @@ export class Configure extends React.Component {
 
     setBaseConfig(nConfig) {
         for (let param in nConfig) {
+            if(param=='latitude' || param =='longitude'||param == 'interval')
+                this.props.config.config.base_config[[param]] = parseInt(nConfig[[param]]);
             this.props.config.config.base_config[[param]] = nConfig[[param]];
         }
         this.props.config.saveCurrentConfig().then(
@@ -58,7 +60,6 @@ export class Configure extends React.Component {
     render() {
         const {getFieldDecorator} = this.props.form;
         const {config} = this.props.config;
-        console.log(config.toJS);
         return (
             <Row>
                 <Col span={24}>
@@ -153,7 +154,7 @@ export class Configure extends React.Component {
                     </Form>
                 </Col>
                 <Col span={24} className="margin_top_40">
-                    <JSONPretty json={this.props.config.config.base_config}/>
+                    <JSONPretty json={this.state}/>
                 </Col>
             </Row>
         )

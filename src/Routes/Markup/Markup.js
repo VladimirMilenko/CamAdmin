@@ -97,8 +97,8 @@ export class Markup extends React.Component {
             y = evt.pageY - elementTop;
         }
         return {
-            x: x,
-            y: y
+            x: Math.ceil(x),
+            y: Math.ceil(y)
         }
     }
 
@@ -141,7 +141,7 @@ export class Markup extends React.Component {
             pixels: this.state.lines.find(line => line.uuid == values.selectedLine).points
         };
         console.log(support_line);
-        this.props.config.config.markup_config.support_lanes.push(support_line);
+        this.props.config.config.markup_config.support_lines.push(support_line);
         this.state.lines.splice(this.state.lines.findIndex(line => line.uuid == values.selectedLine), 1);
         this.setState({lines: this.state.lines});
         this.forceUpdate();
@@ -159,7 +159,7 @@ export class Markup extends React.Component {
     }
 
     removeLine() {
-        let {support_lanes, lanes} = this.props.config.config.markup_config;
+        let {support_lines, lanes} = this.props.config.config.markup_config;
         if (this.state.selectedUUID != '') {
             let index = this.state.lines.findIndex(line => line.uuid == this.state.selectedUUID);
             if (index > -1) {
@@ -167,15 +167,15 @@ export class Markup extends React.Component {
                 this.setState({selectedUUID: ''});
                 this.forceUpdate();
             } else {
-                index = support_lanes.findIndex(line => line.uuid == this.state.selectedUUID);
+                index = support_lines.findIndex(line => line.uuid == this.state.selectedUUID);
                 if (index > -1) {
-                    let line = support_lanes[index];
+                    let line = support_lines[index];
                     let indexes = lanes.findIndex(lane => lane.counting_line_name == line.line_name);
                     while (indexes > -1) {
                         lanes.splice(indexes, 1);
                         indexes = lanes.findIndex(lane => lane.counting_line_name == line.line_name);
                     }
-                    support_lanes.splice(index, 1);
+                    support_lines.splice(index, 1);
                     this.setState({selectedUUID: ''});
                 }
             }
@@ -189,11 +189,11 @@ export class Markup extends React.Component {
 
     render() {
         let showJSON = mobx.toJS(this.props.config.config.markup_config);
-        for (let line of showJSON.support_lanes) {
+        for (let line of showJSON.support_lines) {
             delete line.uuid;
         }
         console.log(showJSON);
-        let {support_lanes} = this.props.config.config.markup_config;
+        let {support_lines} = this.props.config.config.markup_config;
         return (
             <Row>
                 <Col lg={{span: 16}} md={{span: 16}} xs={{span: 20}}>
@@ -232,7 +232,7 @@ export class Markup extends React.Component {
 
                                     )
                                 })}
-                                {support_lanes.map((line, index) => {
+                                {support_lines.map((line, index) => {
                                         return (
                                             <g key={index}>
                                                 <Tooltip placement="top"

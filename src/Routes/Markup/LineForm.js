@@ -12,7 +12,7 @@ const FormItem = Form.Item;
 export default class LineForm extends React.Component {
     render() {
         let {getFieldDecorator} = this.props.form;
-        let {support_lanes} = this.props.config.config.markup_config;
+        let {support_lines} = this.props.config.config.markup_config;
         return (
             <Form
                 horizontal
@@ -55,7 +55,7 @@ export default class LineForm extends React.Component {
                     })(
                         <Select placeholder="Линия подсчета" size="large">
                             {
-                                support_lanes.map((line, index) => {
+                                support_lines.map((line, index) => {
                                     return (
                                         <Select.Option key={index}
                                                        value={line.line_name}>{line.line_name}</Select.Option>
