@@ -309,6 +309,7 @@ export class Markup extends React.Component {
                     <Button className="full_width" type="ghost" onClick={(e) => {
                         e.preventDefault();
                         this.props.routing.push('/');
+
                     }}>На главную</Button>
                 </Col>
                 <Col span={24}>
