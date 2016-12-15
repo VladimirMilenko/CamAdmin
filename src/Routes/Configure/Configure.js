@@ -28,7 +28,8 @@ export class Configure extends React.Component {
         for (let param in nConfig) {
             if(param=='latitude' || param =='longitude'||param == 'interval')
                 this.props.config.config.base_config[[param]] = parseInt(nConfig[[param]]);
-            this.props.config.config.base_config[[param]] = nConfig[[param]];
+            else
+                this.props.config.config.base_config[[param]] = nConfig[[param]];
         }
         this.props.config.saveCurrentConfig().then(
             (response) => {
