@@ -3,8 +3,7 @@
  */
 import {observable, reaction} from 'mobx';
 import * as axios from "axios";
-import * as moment from "moment";
-import ru from 'moment/locale/ru'
+import moment from "moment";
 
 moment.locale('ru');
 
