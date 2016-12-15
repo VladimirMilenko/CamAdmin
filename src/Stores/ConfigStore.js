@@ -6,11 +6,11 @@ import axios from 'axios';
 export class ConfigStore {
     @observable config = {
         base_config: {
-            latitude: '',
-            longitude: '',
+            latitude: 0,
+            longitude: 0,
             location: '',
             resolution: '',
-            interval: ''
+            interval: 0
         },
         markup_config: {
             lanes: [],
