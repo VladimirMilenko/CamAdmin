@@ -549,9 +549,9 @@ samp {
 }
 @font-face {
   font-family: 'anticon';
-  src: url('fonts/font_r5u29ls31bgldi.eot');
+  src: url('CamAdmin/fonts/font_r5u29ls31bgldi.eot');
   /* IE9*/
-  src: url('fonts/font_r5u29ls31bgldi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/font_r5u29ls31bgldi.woff') format('woff'), /* chrome、firefox */ url('fonts/font_r5u29ls31bgldi.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('fonts/font_r5u29ls31bgldi.svg#iconfont') format('svg');
+  src: url('CamAdmin/fonts/font_r5u29ls31bgldi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('CamAdmin/fonts/font_r5u29ls31bgldi.woff') format('woff'), /* chrome、firefox */ url('CamAdmin/fonts/font_r5u29ls31bgldi.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('CamAdmin/fonts/font_r5u29ls31bgldi.svg#iconfont') format('svg');
   /* iOS 4.1- */
 }
 .anticon {
