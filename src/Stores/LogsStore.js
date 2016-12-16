@@ -131,6 +131,7 @@ class LogsStore {
         statusIsValue: true,
         renderable:true,
         render:(value)=>{
+            return moment.utc(value,'seconds').format("HH:mm:ss")
         },
         statusDescription: {
             'null': {
