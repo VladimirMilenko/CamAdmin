@@ -7,7 +7,7 @@ class AppState {
     }
     @action
     setDefaultConnectionUrl() {
-        this.defaultConnectionUrl = "http://localhost:5000/";
+        this.defaultConnectionUrl = "/";
     }
 
     @computed get connectionUrl() {
