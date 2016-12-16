@@ -132,7 +132,7 @@ class LogsStore {
         renderable:true,
         render:(value)=>{
             let duration = moment.duration(value,'seconds');
-            return `${duration.hours()}:${duration.minutes()}:${duration.seconds()}`
+            return `${duration.asHours()}:${duration.minutes()}:${duration.seconds()}`
         },
         statusDescription: {
             'null': {
