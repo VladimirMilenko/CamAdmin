@@ -131,9 +131,9 @@ class LogsStore {
         statusIsValue: true,
         renderable:true,
         render:(value)=>{
-            //let duration = moment.duration(value,'seconds');
-            return (numeral(value)).format("00:00:00");
-            //return `${numeral(Math.trunc(duration.asHours())).format("00")}:${numeral(duration.minutes()).format("00")}:${numeral(duration.seconds()).format("00")}`
+            let duration = moment.duration(value,'seconds');
+            //return (numeral(value)).format("00:00:00");
+            return `${numeral(Math.trunc(duration.asHours())).format("00")}:${numeral(duration.minutes()).format("00")}:${numeral(duration.seconds()).format("00")}`
         },
         statusDescription: {
             'null': {
