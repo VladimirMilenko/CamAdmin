@@ -4,7 +4,8 @@
 import {observable, reaction} from 'mobx';
 import * as axios from "axios";
 import moment from "moment";
-import numeral from 'numeral';
+import * as numeral from "numeral";
+
 moment.locale('ru');
 
 class LogsStore {
@@ -131,9 +132,15 @@ class LogsStore {
         statusIsValue: true,
         renderable:true,
         render:(value)=>{
+<<<<<<< HEAD
             let duration = moment.duration(value,'seconds');
             //return (numeral(value)).format("00:00:00");
             return `${numeral(Math.trunc(duration.asHours())).format("00")}:${numeral(duration.minutes()).format("00")}:${numeral(duration.seconds()).format("00")}`
+=======
+            //let duration = moment.duration(value,'seconds');
+            return numeral(value).format("00:00:00");
+            //return `${numeral(Math.trunc(duration.asHours())).format("00")}:${numeral(duration.minutes()).format("00")}:${numeral(duration.seconds()).format("00")}`
+>>>>>>> parent of 7d04c73... Please, i really want it to be working!
         },
         statusDescription: {
             'null': {
