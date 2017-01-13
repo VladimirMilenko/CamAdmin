@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
+
 
 module.exports = {
     devtool: null,
@@ -7,7 +9,7 @@ module.exports = {
         './src/index'
     ],
     output: {
-        path: path.join(__dirname, '..' 'static'),
+        path: path.join(__dirname, '..', 'static'),
         filename: 'bundle.js',
         publicPath: '/static/'
     },
@@ -25,21 +27,28 @@ module.exports = {
                 unused: true,
                 dead_code: true,
                 warnings: true,
-                loops:true
+                loops: true
             },
-            output:{
-                comments:false
+            output: {
+                comments: false
             }
-        })
+        }),
+        new ExtractTextPlugin("main.css")
     ],
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
     module: {
         loaders: [{
-            test: /\.jsx?$/,
-            loaders: ['babel'],
-            include: path.join(__dirname, 'src')
-        }]
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        },
+            {
+                test: /\.jsx?$/,
+                loaders: ['babel'],
+                include: path.join(__dirname, 'src')
+            },
+            {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'}
+        ]
     }
 };

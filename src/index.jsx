@@ -12,6 +12,9 @@ import Configure from "./Routes/Configure/Configure";
 import Markup from "./Routes/Markup/Markup";
 import ConfigStore from "./Stores/ConfigStore";
 
+require("../css/antd.css");
+require("../css/project.css");
+
 const routingStore = new RouterStore();
 const appState = new AppState();
 const logsStore = new LogsStore(appState);
